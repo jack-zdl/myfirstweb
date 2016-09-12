@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <filter>
+  <filter-name>filter</filter-name>
+  <filter-class>com.filter.Zh_Filter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>filter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUserServlet</servlet-name>
+    <servlet-class>com.servlet.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.servlet.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConsultServlet</servlet-name>
+    <servlet-class>com.servlet.ConsultServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>com.servlet.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ModificationUserServlet</servlet-name>
+    <servlet-class>com.servlet.ModificationUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>com.servlet.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckUserServlet</servlet-name>
+    <servlet-class>com.servlet.CheckUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddArticleServlet</servlet-name>
+    <servlet-class>com.servlet.AddArticleServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowContentServlet</servlet-name>
+    <servlet-class>com.servlet.ShowContentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddCommentServlet</servlet-name>
+    <servlet-class>com.servlet.AddCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowCommentServlet</servlet-name>
+    <servlet-class>com.servlet.ShowCommentServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AddUserServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>*.to</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ConsultServlet</servlet-name>
+    <url-pattern>*.so</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>*.go</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModificationUserServlet</servlet-name>
+    <url-pattern>*.no</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>*.java</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckUserServlet</servlet-name>
+    <url-pattern>*.check</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddArticleServlet</servlet-name>
+    <url-pattern>*.add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowContentServlet</servlet-name>
+    <url-pattern>*.show</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCommentServlet</servlet-name>
+    <url-pattern>*.comment</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowCommentServlet</servlet-name>
+    <url-pattern>*.look</url-pattern>
+  </servlet-mapping>
+</web-app>

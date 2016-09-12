@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- XHTML  文档说明   现在用<!DOCTYPE html> -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <META http-equiv="Content-Type" content="text/html; charset=utf-8"/><!--  处理文字乱码     -->
+  <!--  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">       处理文字乱码     -->
+   <title>欢迎来到国泰君安商城</title>
+	 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+     
+	 <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css" />
+	  <link rel="stylesheet" href="uEditor/uEditor.css" type="text/css" />
+	    <link rel="stylesheet" href="css/style.css" type="text/css" />
+	    
+	 <script src="js/jquery.js" type="text/javascript"></script>
+	  <script src="js/jquery-migrate-1.2.1.js" type="text/javascript"></script>
+    <script src="js/jquery.ui.js" type="text/javascript"></script>
+	 <script src="js/jquery.validate.js" type="text/javascript"></script>
+	  <script src="uEditor/uEditor.js" type="text/javascript"></script>
+	    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+	  	  <script src="js/jquery.form.js" type="text/javascript"></script>
+	 <script src="js/index.js" type="text/javascript"></script>
+</head>
+  
+<body>
+ <div  id="header">
+     <div class="header_main">
+      	<h3>国泰君安</h3>
+			<div class="header_search">
+	      		<input type="text" name="search" class="search"/>
+        	</div>
+			<div class="header_button">
+				<button id="search_button">查询</button>
+				<button id="question_button">提问</button>
+     		</div>
+	 		<div class="header_member">
+		 		<a href="javascript:void(0)" id="reg_a"> 注册 </a> 
+				<a href="javascript:void(0)" id="member">用户</a>
+				| 
+				<a href="javascript:void(0)" id="login_a">登陆</a>
+				<a href="javascript:void(0)" id="logout">退出</a>
+	 		</div>
+ 	 </div>
+ </div><br /> <br />
+ 
+ <div id="main">
+	<div class="main_left">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs1">tab1</a></li>
+				<li><a href="#tabs2">tab2</a></li>
+				<li><a href="#tabs3">tab3</a></li>
+			</ul>
+			<div id="tabs1">tabs1-content</div>
+			<div id="tabs2">tabs2-content</div>
+			<div id="tabs3">tabs3-content</div>
+		</div>
+		<div class="content">
+			
+			</div>
+		</div><br /> <br />
+	<div class="main_right">
+		<div id="accordion">
+			<h3>菜单1</h3>
+			<div><p>内容1</p><p>内容1</p></div>
+			<h3>菜单2</h3>
+			<div>内容2</div>
+			<h3>菜单3</h3>
+			<div>内容3</div>
+		</div>
+	</div>
+</div>
+ 
+<form  name="form1" id="reg"  title="会员注册" action="AddUserServletServlet.do" method="post" > <br /><br />
+ <p>姓名：    <input type="text" name="USERNAME" id="USERNAME" onblur="validatorloginName()" /><span class="star">*</span></p><div id='eu' ></div><br />
+ <p>密码：    <input type="text" name="password" id="password"  /><span class="star">*</span></p><br />
+ <p>确认密码：<input type="text" name="notpassword"  /><span class="star">*</span></p><br />
+ <p>性别  ：<label for="mail">男</label><input type="radio" name="SEX" value="男" id="mail"> </input><label for="femail">女</label><input type="radio" name="SEX" value="女"id="femail" ></input></p>
+
+ <p>年龄    ：<input type="text" name="AGE"  /></p><br/>
+ <p>生日    ：<input type="text" name="BIRTHDAY" readonly="readonly" id="BIRTHDAY" /></p>
+</form>
+
+ 
+ 
+ <form name="form2" id="login"     action="LoginServlet.to" method="post" title="会员登陆"> <br /><br />
+   <p> 姓名<input  type="text" name="USERNAME" id="USER" class="required" title="请输入姓名"/><span class="star">*</span></p> <br />   <br />
+   <p>密码<input type="text" name="PASSWORD" class="required" title="请输入密码"/><span class="star">*</span></p> <br /> <br />
+   
+   
+ </form>
+ <form  name="form3" id="article"  title="提问"action="AddAriticleServlet.add" method="post">
+   <p>文章标题： <input type="text" name="title" class="title" style="width:390px;" /></p>
+   <p><textarea   class="article_content" name="article_content">请填写问题描述！</textarea></p> 
+ </form>
+ <br/> <br/> <br/>
+
+ <div id="loading">loading......</div>
+ <div id="error">请登录后操作...</div>
+  </body>
+</html>

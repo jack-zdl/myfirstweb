@@ -1,0 +1,242 @@
+body{
+	background:#fff;
+	margin:40px,0,0,0;  
+	padding:0;
+	font-size:12px;
+	font-family:宋体；
+	background:#fff;
+}
+#reg ,#article{
+	padding:15px,0,0,15px;
+}
+#reg p ,#article p{
+	margin:10px 0;
+	padding:0;
+}
+#reg p label,#article p label{
+	font-size:14px;
+	color:#666;
+}
+#reg .star,#article .star{
+	font-size:14px;
+	color:red;
+}
+#eu{
+	color:red;
+	font-size:12px;
+}
+#login  .star{
+	font-size:14px;
+	color:red;
+}
+/*更改表单主题*/
+/*提示信息文本颜色
+.ui-tooltip{
+	color:red;/*    失败  不知道为什么？
+}
+$("#USERNAME").tooltip({
+	disable:true, 	失败  不显示提示信息
+	conten : '改变title'  改变提示信息
+});
+$('[title]').tooltip({
+	items:'input',     选择显示title的事件
+});
+*/
+#header{
+	width:100%;
+	height :40px;
+	background:url(../images/header_bg.png);
+	position:absolute;
+	top:0;
+}
+#header .header_main{
+		width:800px;
+		height:50px;
+		margin:0 auto;
+}
+#header .header_main h3{
+	font-size:20px;
+	margin:0;
+	padding:0;
+	color:#666;
+	height:40px;
+	line-height:40px;
+	padding:0 10px;
+	float:left
+}
+#header .header_search{
+	padding:7px 0 0 0;
+	float:left;
+}
+#header .header_search .search{
+	width:250px;
+	height:24px;
+	border:1px,solid #ccc;
+	background:#fff;
+	color:#666;
+	font-size:14px;
+	text-indent:5px;
+}
+#header .header_button{
+	padding:6px;
+	float:left;
+}
+#header .header_member{
+	float:right ;
+	height :40px;
+	line-height:40px;
+	color:#555;
+	font-size:14px;
+}
+#header .header_member a{
+	text-decoration:none;
+	color:#555;
+	font-size:14px;
+}
+
+
+#title{
+	width:290px;
+	height:20px;
+	font-size:14px;
+}
+
+#loading {
+	background:url(../images/loading.gif) no-repeat 20px center;
+	line-height:28px;
+	font-size:14px;
+	font-weight:bold;
+	text-indent:40px;
+	color:#666;
+}
+#error{
+	color：red;
+	font-size:12px;
+	background:url(../images/error.png)no-repert 20px center;
+	line-height:28px;
+	line-width:bold;
+	text-indent:40px;
+}
+#main {
+	width:800px;
+	margin:0 auto;
+	padding:10px 0 0 0;
+}
+#main .main_left {
+	width:580px;
+	float:left;
+}
+#main .main_right {
+	width:200px;
+	float:right;
+}
+#tabs {
+	border:none;
+}
+#ui-tabs-1,#ui-tabs-2,#ui-tabs-3 {
+	border:1px solid #aaa;
+	border-top:none;
+	position:relative;
+	top:-2px;
+}
+#accordion {
+	width:100px;
+	height:250px;
+	font-size:12px;
+}
+.content h4 {
+	color:#666;
+	font-weight:normal;
+}
+.content h3 {
+	color:#369;
+}
+.content .editor {
+	line-height:180%;    /**限制行高*/
+	
+	overflow:hidden;
+	color:#333;
+}
+.content .bottom {
+	padding:5px 0 0 0;
+}
+.content hr {
+	color:#ccc;
+	height:1px;
+}
+.content .comment{
+	color:#369;
+	cursor:pointer;
+}
+.content .comment_list {
+	border:1px solid #ccc;
+	border-radius:4px;
+	padding:5px 10px;
+	display:none;
+}
+.content .comment_list dl {
+	border:1px;
+	margin:0;
+	padding:3px 0 5px 0;
+	border-bottom:1px solid #ccc;/*下面加一个线*/
+}
+.content .comment_list  dl dt{
+	margin:0;
+	padding:5px 0 0 0;
+	color:#369;
+}
+.content .comment_list  dl  dd{
+	margin:0;
+	padding:0;
+	color:#333;
+	line-heigth:180%;
+}
+.content .comment_list  dl  dd.data{
+	color:#666;
+}
+.content .comment_list  dl .comment_content{
+	border-bottom:1px solid #ccc;
+}
+.content .comment_add{
+	text-align:right;
+}
+.content .comment_add textarea {
+	width:98%;
+	border:1px solid #ccc;
+	border-radious:4px;
+	background:#fff;
+	padding:5px;
+	margin:0 0 5px 0;
+	font-size:12px;
+	color:#666;
+	resize：none;/*不允许拖动*/
+}
+.content .comment_add input {
+	cursor:pointer;
+}
+.content .comment_load dd{
+	background:url(../images/comment_load.gif) no-repeat 75px 45%;
+}
+.content .up {
+	float:right;
+	color:#369;
+	cursor:pointer;
+}
+.content .down {
+	/*float:right; 从右边出现*/
+	color:#369;
+	cursor:pointer;
+}
+#tabs{ 
+	/*margin:50px 200px;*/
+	border:none;
+}
+#tab1,#tab2,#tab3 {
+	border：1px solid #aaa;
+	border-top:none;
+	position:relative;
+	top:-2px;
+}
+#accordion{
+     margin:0  50px 0  0;
+}

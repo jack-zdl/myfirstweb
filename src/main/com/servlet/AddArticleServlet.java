@@ -8,18 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.delete.DeleteUser;
+import com.article.AddArticle;
+import com.user.UserArticle;
 
-public class DeleteUserServlet extends HttpServlet {
-  private static final long serialVersionUID=1L;
-	
-	public DeleteUserServlet() {
+public class AddArticleServlet extends HttpServlet {
+	 private static final long serialVersionUID=1L;		
+	/**
+	 * Constructor of the object.
+	 */
+	public AddArticleServlet() {
 		super();
 	}
 
 	/**
 	 * Destruction of the servlet. <br>
 	 */
+	@Override
 	public void destroy() {
 		super.destroy(); // Just puts "destroy" string in log
 		// Put your code here
@@ -35,6 +39,7 @@ public class DeleteUserServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -55,24 +60,44 @@ public class DeleteUserServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		int id=Integer.parseInt(request.getParameter("id"));
-		try{
-			DeleteUser deleteuser=new DeleteUser();
-			deleteuser.deleteuser(id);
-		}catch(Exception e){
-			e.printStackTrace();
-			response.sendRedirect("deletefail.jsp");
-		}
-		//DeleteUser deleteuser=new DeleteUser();
-		//deleteuser.deleteuser(id);
-	
-		response.sendRedirect("deletesuccess.jsp");
+		String title=request.getParameter("title");
+		String content=request.getParameter("article_content");
+		String user=request.getParameter("user");
+		boolean flag=false;
+		UserArticle userarticle=new UserArticle();
+		userarticle.setTitle(title);
+		userarticle.setContent(content);
+		userarticle.setUser(user);
 		
+		AddArticle addarticle=new AddArticle();
+		int i= addarticle.addarticle(userarticle);
+		try{
+			if(i>0){
+				//System.out.println("文章存储成功");
+				flag=true;
+				//response.sendRedirect("index.html");
+			}else{
+				flag=false;
+			}
+			
+			
+			
+		  //  pstmt.setString(1, );
+		  //  pstmt.setString(2, );
+		   // }//����ҳ��
+		}catch (Exception e){
+			
+			e.printStackTrace();
+			flag=false;
+		}
+		
+		out.print(flag);
 		out.flush();
 		out.close();
 	}
@@ -82,6 +107,7 @@ public class DeleteUserServlet extends HttpServlet {
 	 *
 	 * @throws ServletException if an error occurs
 	 */
+	@Override
 	public void init() throws ServletException {
 		// Put your code here
 	}

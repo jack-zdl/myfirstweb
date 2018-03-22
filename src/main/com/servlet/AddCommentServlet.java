@@ -8,21 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.article.AddArticle;
-import com.user.UserArticle;
+import com.show.AddComment;
+import com.user.UserComment;
 
-public class AddArticleServlet extends HttpServlet {
-	 private static final long serialVersionUID=1L;		
+public class AddCommentServlet extends HttpServlet {
+	 private static final long serialVersionUID=1L;	
 	/**
 	 * Constructor of the object.
 	 */
-	public AddArticleServlet() {
+	public AddCommentServlet() {
 		super();
 	}
 
 	/**
 	 * Destruction of the servlet. <br>
 	 */
+	@Override
 	public void destroy() {
 		super.destroy(); // Just puts "destroy" string in log
 		// Put your code here
@@ -38,6 +39,7 @@ public class AddArticleServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -58,43 +60,29 @@ public class AddArticleServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String title=request.getParameter("title");
-		String content=request.getParameter("article_content");
+	    int titleid=Integer.parseInt(request.getParameter("titleid"));
+		String content=request.getParameter("comment");
 		String user=request.getParameter("user");
-		boolean flag=false;
-		UserArticle userarticle=new UserArticle();
-		userarticle.setTitle(title);
-		userarticle.setContent(content);
-		userarticle.setUser(user);
+		boolean mag=false;
+		UserComment usercomment=new UserComment();
+		usercomment.setTitleid(titleid);
+		usercomment.setContent(content);
+		usercomment.setUser(user);
 		
-		AddArticle addarticle=new AddArticle();
-		int i= addarticle.addarticle(userarticle);
-		try{
-			if(i>0){
-				//System.out.println("文章存储成功");
-				flag=true;
-				//response.sendRedirect("index.html");
-			}else{
-				flag=false;
-			}
-			
-			
-			
-		  //  pstmt.setString(1, );
-		  //  pstmt.setString(2, );
-		   // }//����ҳ��
-		}catch (Exception e){
-			
-			e.printStackTrace();
-			flag=false;
-		}
-		
-		out.print(flag);
+		AddComment addcomment =new AddComment();
+	    int i=addcomment.addcom(usercomment);
+	    if(i>0){
+	    	mag=true;
+	    }else{
+	    	mag=false;
+	    }
+	    out.print(mag);
 		out.flush();
 		out.close();
 	}
@@ -104,6 +92,7 @@ public class AddArticleServlet extends HttpServlet {
 	 *
 	 * @throws ServletException if an error occurs
 	 */
+	@Override
 	public void init() throws ServletException {
 		// Put your code here
 	}

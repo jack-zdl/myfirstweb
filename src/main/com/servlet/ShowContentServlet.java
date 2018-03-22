@@ -2,27 +2,34 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.show.AddComment;
-import com.user.UserComment;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
-public class AddCommentServlet extends HttpServlet {
-	 private static final long serialVersionUID=1L;	
+import com.modification.ModificationUser;
+import com.show.ShowContent;
+import com.user.User;
+import com.user.UserArticle;
+
+public class ShowContentServlet extends HttpServlet {
+	 private static final long serialVersionUID=1L;
 	/**
 	 * Constructor of the object.
 	 */
-	public AddCommentServlet() {
+	public ShowContentServlet() {
 		super();
 	}
 
 	/**
 	 * Destruction of the servlet. <br>
 	 */
+	@Override
 	public void destroy() {
 		super.destroy(); // Just puts "destroy" string in log
 		// Put your code here
@@ -38,12 +45,13 @@ public class AddCommentServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		this.doPost(request,response);
+		this.doPost(request, response);
 		out.flush();
 		out.close();
 	}
@@ -58,30 +66,37 @@ public class AddCommentServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
+	@SuppressWarnings("static-access")
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-	    int titleid=Integer.parseInt(request.getParameter("titleid"));
-		String content=request.getParameter("comment");
-		String user=request.getParameter("user");
-		boolean mag=false;
-		UserComment usercomment=new UserComment();
-		usercomment.setTitleid(titleid);
-		usercomment.setContent(content);
-		usercomment.setUser(user);
-		
-		AddComment addcomment =new AddComment();
-	    int i=addcomment.addcom(usercomment);
-	    if(i>0){
-	    	mag=true;
-	    }else{
-	    	mag=false;
-	    }
-	    out.print(mag);
-		out.flush();
-		out.close();
+	
+//		  String page1=request.getParameter("page");  //锟斤拷锟揭筹拷娲拷锟斤拷锟斤拷锟街�
+//		   int page=1;
+//		   if(page1 !=null){
+//			   page=Integer.parseInt(page1);  //锟斤拷锟揭筹拷娲拷锟斤拷锟斤拷锟斤拷强锟街�锟酵匡拷锟皆革拷值
+//			   }
+		JSONArray ja = new JSONArray();
+		//JSONObject jb = new JSONObject();
+		 ShowContent sc=new ShowContent();
+		 try {
+			String jas = sc.resultToJson();
+			//System.out.println("JSON格式1--"+jas);
+			ja.fromObject(jas);
+			//System.out.println("JSON格式2--"+jas);
+			out.print(jas);
+			out.flush();
+			out.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		   //request.getRequestDispatcher("index.html").forward(request,response);
+	
 	}
 
 	/**
@@ -89,6 +104,7 @@ public class AddCommentServlet extends HttpServlet {
 	 *
 	 * @throws ServletException if an error occurs
 	 */
+	@Override
 	public void init() throws ServletException {
 		// Put your code here
 	}

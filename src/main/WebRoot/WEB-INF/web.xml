@@ -78,14 +78,6 @@
 
 
 
-
-
-
-
-
-
-
-
   <servlet-mapping>
     <servlet-name>AddUserServlet</servlet-name>
     <url-pattern>*.do</url-pattern>

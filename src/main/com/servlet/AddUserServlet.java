@@ -1,43 +1,35 @@
 package com.servlet;
 
 import java.io.IOException;
-
-
 import java.io.PrintWriter;
-
-
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.add.AddUser;
 import com.user.User;
 
-
-
-
-
-//�����ע�����ҳ��
+//??????????????
 public class AddUserServlet extends HttpServlet {
 	 private static final long serialVersionUID=1L;			
 	/**
 	 * Constructor of the object.
-	
 
 	/**
 	 * Destruction of the servlet. <br>
 	 */
+	@Override
 	public void destroy() {
 		super.destroy(); // Just puts "destroy" string in log
 		// Put your code here
 	}
-	public void doget(HttpServletRequest request, HttpServletResponse response)
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter(); 
-		     this.doPost(request, response);
+		PrintWriter out = response.getWriter();
+		System.out.println("-------------------------------------------------------");
+		this.doPost(request, response);
 		     out.flush();
 				out.close();
 	}
@@ -53,16 +45,17 @@ public class AddUserServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		
-		response.setContentType("text/html"); //��������
+		response.setContentType("text/html"); //????????
 		
 		
-		PrintWriter out = response.getWriter();    ////���ҳ�����
-		String name=request.getParameter("USERNAME"); //���ҳ��õ���USERNAME
-		String password=request.getParameter("password");//���ҳ��õ���PASSWORD
+		PrintWriter out = response.getWriter();    ////?????????
+		String name=request.getParameter("USERNAME"); //??????????USERNAME
+		String password=request.getParameter("password");//??????????PASSWORD
 		String  sex=request.getParameter("SEX");
 		String age=request.getParameter("AGE");
 		String birthday=request.getParameter("BIRTHDAY");
@@ -106,6 +99,7 @@ public class AddUserServlet extends HttpServlet {
 	 *
 	 * @throws ServletException if an error occurs
 	 */
+	@Override
 	public void init() throws ServletException {
 		// Put your code here
 	}
